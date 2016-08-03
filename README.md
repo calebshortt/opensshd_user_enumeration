@@ -4,4 +4,8 @@ A simple script that takes advantage of OpenSSHD 7.2p2 - User Enumeration: CVE 2
 Can take a list of usernames and try them against a server -- looks to find users in the system.
 Built from the sample code specified at https://www.exploit-db.com/exploits/40113/
 
+# Usage
+
+> python opensshd.py [-h] [-u --userlist USERLIST_FILE] target_ip
+
 
