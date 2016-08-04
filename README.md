@@ -14,6 +14,7 @@ Built from the sample code specified at https://www.exploit-db.com/exploits/4011
 
 Ex:
 > testuser      0.0356
+
 > root          0.5625      *
 
 Note: The * is a flag that marks usernames of interest and that might be in the target system.
