@@ -5,6 +5,7 @@ import argparse
 import logging
 
 from multiprocessing import Pool
+from functools import reduce
 
 logging.basicConfig()
 
@@ -44,13 +45,13 @@ class Engine(object):
     def test_with_user(self, user):
         p = 'A' * 25000
         ssh = paramiko.SSHClient()
-        start_time = time.clock()
+        start_time = time.process_time()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        end_time = time.clock()
+        end_time = time.process_time()
         try:
             ssh.connect(self.target, username=user, password=p)
         except:
-            end_time = time.clock()
+            end_time = time.process_time()
         total = end_time - start_time
         self.calc_times.append(total)
         avg = reduce(lambda x, y: x + y, self.calc_times) / len(self.calc_times)
